@@ -152,10 +152,10 @@ if app_mode == 'Visualization':
     st.write(" ")
     st.bar_chart(data=df, x=symbols[0], y=symbols[1], use_container_width=True)
 
-    tab2.subheader("Correlation Tab 📉")
-    fig,ax = plt.subplots(figsize=(width1, width1))
-    sns.heatmap(df.corr(),cmap= sns.cubehelix_palette(8),annot = True, ax=ax)
-    tab2.write(fig)
+    #tab2.subheader("Correlation Tab 📉")
+    #fig,ax = plt.subplots(figsize=(width1, width1))
+    #sns.heatmap(df.corr(),cmap= sns.cubehelix_palette(8),annot = True, ax=ax)
+    #tab2.write(fig)
 
 
     st.write(" ")
