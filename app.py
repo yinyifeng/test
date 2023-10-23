@@ -23,23 +23,13 @@ from streamlit_pandas_profiling import st_profile_report
 
 
 
-data_url = "http://lib.stat.cmu.edu/datasets/boston" 
-
-
-# data = "C:\Users\DELL\Desktop\streamlit\images\data-processing.png"
+data_url = "https://www.kaggle.com/datasets/rajatkumar30/food-delivery-time" 
 
 # setting up the page streamlit
 
 st.set_page_config(
-    page_title="Linear Regression App ", layout="wide", page_icon="./images/linear-regression.png"
+    page_title="Streamlit Food Delivery Time App", layout="wide", page_icon="./images/linear-regression.png"
 )
-
-
-def img_to_bytes(img_path):
-    img_bytes = Path(img_path).read_bytes()
-    encoded = base64.b64encode(img_bytes).decode()
-    return encoded
-
 
 
 def main():
@@ -75,18 +65,16 @@ def main():
 image_nyu = Image.open('images/nyu.png')
 st.image(image_nyu, width=100)
 
-st.title("Linear Regression Lab 🧪")
+st.title("Food Delivery Time 🍜")
 
 # navigation dropdown
 
 st.sidebar.header("Dashboard")
 st.sidebar.markdown("---")
 app_mode = st.sidebar.selectbox('🔎 Select Page',['Introduction','Visualization','Prediction'])
-select_dataset =  st.sidebar.selectbox('💾 Select Dataset',["Wine Quality","Real Estate"])
-if select_dataset == "Wine Quality":
-    df = pd.read_csv("wine_quality_red.csv")
-else: 
-    df = pd.read_csv("real_estate.csv")
+select_dataset =  st.sidebar.selectbox('💾 Select Dataset',["Delivery Time"])
+df = pd.read_csv("deliverytime.csv")
+
 
 list_variables = df.columns
 select_variable =  st.sidebar.selectbox('🎯 Select Variable to Predict',list_variables)
@@ -97,7 +85,7 @@ if app_mode == 'Introduction':
 
 
     st.markdown("### 00 - Show  Dataset")
-    if select_dataset == "Wine Quality":
+    if select_dataset == "Delivery Time":
         col1, col2, col3,col4,col5,col6,col7,col8,col9,col10 = st.columns(10)
         col1.markdown(" **fixed acidity** ")
         col1.markdown("most acids involved with wine or fixed or nonvolatile (do not evaporate readily)")
