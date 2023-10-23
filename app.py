@@ -136,8 +136,8 @@ if app_mode == 'Introduction':
     st.markdown("### 04 - Complete Report")
     if st.button("Generate Report"):
 
-    pr = df.profile_report()
-    st_profile_report(pr)
+        pr = df.profile_report()
+        st_profile_report(pr)
 
 
 if app_mode == 'Visualization':
