@@ -150,7 +150,7 @@ if app_mode == 'Visualization':
     tab1.subheader("Line Chart")
     st.line_chart(data=df, x=symbols[0],y=symbols[1], width=0, height=0, use_container_width=True)
     st.write(" ")
-    st.bar_chart(data=df, x=symbols[0], y=symbols[1], use_container_width=True)
+    st.bar_chart(data=df, x=symbols[0], y=df[symbols[0]].value_counts(), use_container_width=True)
 
     tab2.subheader("Correlation Tab 📉")
     fig,ax = plt.subplots(figsize=(width1, width1))
