@@ -80,7 +80,7 @@ list_variables = df.columns
 select_variable =  st.sidebar.selectbox('🎯 Select Variable to Predict',list_variables)
 # page 1 
 if app_mode == 'Introduction':
-    image_header = Image.open('./images/Linear-Regression1.webp')
+    image_header = Image.open('./images/dataset-cover.jpg')
     st.image(image_header, width=600)
 
 
