@@ -73,7 +73,7 @@ st.sidebar.header("Dashboard")
 st.sidebar.markdown("---")
 app_mode = st.sidebar.selectbox('🔎 Select Page',['Introduction','Visualization','Prediction'])
 select_dataset =  st.sidebar.selectbox('💾 Select Dataset',["Delivery Time"])
-df = pd.read_csv("deliverytime2.csv")
+df = pd.read_csv("deliverytime.csv")
 
 
 
@@ -164,7 +164,9 @@ if app_mode == 'Visualization':
 
     st.pyplot(fig1)
 
-    st.map(df2, 'lat', 'lon')
+    df_test = pd.read_csv("deliverytime2.csv")
+
+    st.map(df_test, 'lat', 'lon')
 
     #tab2.subheader("Correlation Tab 📉")
     #fig,ax = plt.subplots(figsize=(width1, width1))
