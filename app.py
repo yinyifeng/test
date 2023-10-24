@@ -173,7 +173,7 @@ if app_mode == 'Prediction':
     st.markdown("## Prediction")
     train_size = st.sidebar.number_input("Train Set Size", min_value=0.00, step=0.01, max_value=1.00, value=0.70)
     new_df= df.drop(labels=select_variable, axis=1)  #axis=1 means we drop data by columns
-    list_var = new_df.columns
+    list_var = df["Time_taken(min)"]
 
     def predict(target_choice,train_size,new_df,output_multi):
         #independent variables / explanatory variables
