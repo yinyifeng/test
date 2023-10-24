@@ -74,6 +74,7 @@ st.sidebar.markdown("---")
 app_mode = st.sidebar.selectbox('🔎 Select Page',['Introduction','Visualization','Prediction'])
 select_dataset =  st.sidebar.selectbox('💾 Select Dataset',["Delivery Time"])
 df = pd.read_csv("deliverytime.csv")
+df2 = pd.read_csv("deliverytime2.csv")
 
 
 list_variables = df.columns
@@ -163,7 +164,7 @@ if app_mode == 'Visualization':
 
     st.pyplot(fig1)
 
-    st.map(df, 'Restaurant_latitude', 'Restaurant_longitude')
+    st.map(df2, 'lat', 'lon')
 
     #tab2.subheader("Correlation Tab 📉")
     #fig,ax = plt.subplots(figsize=(width1, width1))
