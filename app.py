@@ -166,7 +166,7 @@ if app_mode == 'Visualization':
 
     df_test = pd.read_csv("deliverytime2.csv")
 
-    st.map(df_test, 'lat', 'lon')
+    st.map(df_test, df_test['lat'], df_test['lon'])
 
     #tab2.subheader("Correlation Tab 📉")
     #fig,ax = plt.subplots(figsize=(width1, width1))
