@@ -152,6 +152,9 @@ if app_mode == 'Visualization':
     st.write(" ")
     st.bar_chart(data=df, x=symbols[0], y=symbols[1], use_container_width=True)
 
+    fig, ax = plt.subplots()
+    ax.pie(df["Type_of_vehicle"].value_counts(), labels=df["Type_of_vehicle"])
+
     #tab2.subheader("Correlation Tab 📉")
     #fig,ax = plt.subplots(figsize=(width1, width1))
     #sns.heatmap(df.corr(),cmap= sns.cubehelix_palette(8),annot = True, ax=ax)
