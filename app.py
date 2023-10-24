@@ -143,15 +143,13 @@ if app_mode == 'Introduction':
 
 if app_mode == 'Visualization':
     st.markdown("## Visualization")
-    symbols = st.multiselect("Select two variables",list_variables,["Delivery_person_Age", "Type_of_vehicle", "Time_taken(min)"])
-    width1 = st.sidebar.slider("plot width", 1, 25, 10)
     #symbols = st.multiselect("", list_variables, list_variables[:5])
     tab1, tab2= st.tabs(["Line Chart","📈 Correlation"])    
 
     tab1.subheader("Line Chart")
-    st.line_chart(data=df, x=symbols[0],y=symbols[1], width=0, height=0, use_container_width=True)
+    st.line_chart(data=df, x="Delivery_person_Age","Time_taken(min)", width=0, height=0, use_container_width=True)
     st.write(" ")
-    st.bar_chart(data=df, x=symbols[0], y=symbols[1], use_container_width=True)
+    st.bar_chart(data=df, x="Type_of_order", y=df["Type_of_order"].value_count(), use_container_width=True)
 
     labels = 'motorcycle', 'scooter', 'electric_scooter', 'bicycle'
     sizes = df["Type_of_vehicle"].value_counts()
@@ -163,10 +161,6 @@ if app_mode == 'Visualization':
     ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
 
     st.pyplot(fig1)
-
-    df_test = pd.read_csv("deliverytime2.csv")
-
-    st.map(df_test, df_test['lat'], df_test['lon'])
 
     #tab2.subheader("Correlation Tab 📉")
     #fig,ax = plt.subplots(figsize=(width1, width1))
