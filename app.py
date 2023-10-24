@@ -163,6 +163,8 @@ if app_mode == 'Visualization':
 
     st.pyplot(fig1)
 
+    st.map(df, latitude='Restaurant_latitude', longitude='Restaurant_longitude')
+
     #tab2.subheader("Correlation Tab 📉")
     #fig,ax = plt.subplots(figsize=(width1, width1))
     #sns.heatmap(df.corr(),cmap= sns.cubehelix_palette(8),annot = True, ax=ax)
