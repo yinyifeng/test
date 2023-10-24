@@ -74,7 +74,7 @@ st.sidebar.markdown("---")
 app_mode = st.sidebar.selectbox('🔎 Select Page',['Introduction','Visualization','Prediction'])
 select_dataset =  st.sidebar.selectbox('💾 Select Dataset',["Delivery Time"])
 df = pd.read_csv("deliverytime.csv")
-df2 = pd.read_csv("deliverytime2.csv")
+
 
 
 list_variables = df.columns
@@ -147,6 +147,8 @@ if app_mode == 'Visualization':
     width1 = st.sidebar.slider("plot width", 1, 25, 10)
     #symbols = st.multiselect("", list_variables, list_variables[:5])
     tab1, tab2= st.tabs(["Line Chart","📈 Correlation"])    
+
+    df2 = pd.read_csv("deliverytime2.csv")
 
     tab1.subheader("Line Chart")
     st.line_chart(data=df, x=symbols[0],y=symbols[1], width=0, height=0, use_container_width=True)
