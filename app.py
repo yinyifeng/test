@@ -149,7 +149,8 @@ if app_mode == 'Visualization':
     tab1.subheader("Line Chart")
     st.line_chart(data=df, x="Delivery_person_Age", y="Time_taken(min)", width=0, height=0, use_container_width=True)
     st.write(" ")
-    st.bar_chart(data=df, x="Type_of_order", y=df["Type_of_order"].value_counts(), use_container_width=True)
+    counts = df["Type_of_order"].value_counts()
+    st.bar_chart(data=df, x="Type_of_order", y=counts, use_container_width=True)
 
     labels = 'motorcycle', 'scooter', 'electric_scooter', 'bicycle'
     sizes = df["Type_of_vehicle"].value_counts()
